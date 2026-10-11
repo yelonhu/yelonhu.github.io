@@ -67,7 +67,7 @@ h1 {
   font-family: "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif SC", "SimSun", serif;
   font-size: 0.9em;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   color: #383838;
   /* Optically align Songti's glyphs with the Latin capitals. */
   transform: translateY(-0.06em);
