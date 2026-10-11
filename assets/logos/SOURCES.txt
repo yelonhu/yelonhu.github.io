@@ -1,0 +1,20 @@
+School marks identify the institutions listed in Education.
+All marks remain the property of their respective institutions.
+
+uw-madison.svg
+Official UW-Madison full-color digital crest; unchanged SVG from:
+https://brand.wisc.edu/resource/crest-only-logo-for-web-digital-use-full-color/
+https://brand.wisc.edu/content/uploads/2023/10/uw-crest-color-web-digital.zip
+
+cuhk.svg
+Source: https://logotyp.us/logo/cuhk-hk/
+Download: https://logotyp.us/file/cuhk-hk.svg
+The adjacent wordmark group was omitted and the SVG viewBox tightened to
+display the emblem alone. Emblem paths and colors are unchanged.
+
+nsfz.png
+Source: https://nsfzdlxx.jyjsfz.cn/info/1018/1454.htm
+Download: https://nsfzdlxx.jyjsfz.cn/images/logo.png
+Unmodified PNG from the affiliated school's website. CSS displays only the
+shared NSFZ crest at the left, excluding the campus-specific wordmark.
+No freely downloadable SVG was located; this remains a raster PNG.

@@ -68,7 +68,7 @@ h1 {
   font-size: 0.9em;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: #555;
+  color: #222;
   /* Optically align Songti's glyphs with the Latin capitals. */
   transform: translateY(-0.06em);
 }
@@ -173,10 +173,24 @@ strong {
 }
 
 .education li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px 28px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 16px;
+}
+
+.school-logo {
+  display: block;
+  width: 48px;
+  height: 52px;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.school-logo--nsfz {
+  width: 40px;
+  object-fit: cover;
+  object-position: left;
 }
 
 .education li + li {
@@ -206,6 +220,7 @@ strong {
   margin-top: 40px;
   color: #666;
   font-size: 13px;
+  text-align: right;
 }
 
 @media (max-width: 600px) {
@@ -221,8 +236,16 @@ strong {
   }
 
   .education li {
-    flex-direction: column;
-    gap: 2px;
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .school-logo {
+    grid-row: span 2;
+  }
+
+  .education .dates {
+    grid-column: 2;
   }
 
   .profile-content {
