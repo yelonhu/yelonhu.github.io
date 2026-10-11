@@ -149,6 +149,77 @@ ul {
   margin-top: 24px;
 }
 
+.publication {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.publication-info {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #191b20;
+  isolation: isolate;
+}
+
+.preview-poster,
+.preview video {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.preview video {
+  visibility: hidden;
+}
+
+.preview.has-frame video {
+  visibility: visible;
+}
+
+.preview-toggle {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  min-width: 44px;
+  min-height: 32px;
+  padding: 3px 8px;
+  border: 1px solid #ffffff70;
+  border-radius: 5px;
+  color: #fff;
+  background: #111c;
+  font: 13px/1.2 "Titillium Web", sans-serif;
+  cursor: pointer;
+}
+
+.preview-toggle:hover {
+  background: #111;
+}
+
+.preview-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preview.has-frame video,
+  .preview-toggle {
+    visibility: hidden;
+  }
+}
+
 .authors {
   margin-top: 2px;
 }
@@ -170,6 +241,11 @@ strong {
 .paper-links span {
   margin: 0 4px;
   color: #777;
+}
+
+.github-stars {
+  font-size: 0.9em;
+  white-space: nowrap;
 }
 
 .education li {
@@ -218,6 +294,19 @@ strong {
 }
 
 @media (max-width: 600px) {
+  .publication {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .publication-info {
+    grid-column: 1;
+  }
+
+  .preview {
+    max-width: 400px;
+  }
+
   main {
     margin: 28px auto 40px;
     padding: 0 20px;
