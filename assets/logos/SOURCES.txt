@@ -15,6 +15,14 @@ display the emblem alone. Emblem paths and colors are unchanged.
 nsfz.png
 Source: https://nsfzdlxx.jyjsfz.cn/info/1018/1454.htm
 Download: https://nsfzdlxx.jyjsfz.cn/images/logo.png
-Unmodified PNG from the affiliated school's website. CSS displays only the
-shared NSFZ crest at the left, excluding the campus-specific wordmark.
-No freely downloadable SVG was located; this remains a raster PNG.
+Unmodified PNG from the affiliated school's website, retained as the source
+for the traced SVG below. It is no longer displayed on the homepage.
+
+nsfz.svg
+Locally traced from the crest region of nsfz.png using VTracer 0.6.15.
+The campus-specific wordmark was excluded (source crop: 0, 7, 59, 79).
+Tracing input was composited on white, upsampled 4x and quantized to five
+colors without dithering. The result contains SVG paths, not an embedded
+bitmap. This is an approximate trace of a low-resolution source, not an
+official vector master; small lettering retains the source's limitations.
+Tool: https://github.com/visioncortex/vtracer
