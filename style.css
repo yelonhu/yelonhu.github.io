@@ -243,6 +243,16 @@ strong {
   color: #777;
 }
 
+.paper-links .paper-link-pending {
+  margin: 0;
+  color: #666;
+  white-space: nowrap;
+}
+
+.paper-link-pending small {
+  font-size: 0.8em;
+}
+
 .github-stars {
   font-size: 0.9em;
   white-space: nowrap;
