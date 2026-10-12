@@ -49,7 +49,7 @@
       ]
     },
     "framing": "Scale proportionally to cover 960x540, then center-crop vertical excess before compositing the title; no padding or stretching.",
-    "variant_b": "Persistent 70% black scrim applied by scaling RGB channels equally to preserve color, no vignette, centered white Georgia Italic OpenGame title throughout; same nine-second gameplay montage. Selected for homepage.",
+    "variant_b": "Persistent 70% black scrim applied by scaling RGB channels equally to preserve color, no vignette, centered white Georgia Italic OpenGame title throughout; same nine-second gameplay montage. Retained as an earlier video variant.",
     "outputs": {
       "opengame-montage-poster.jpg": {
         "bytes": 108117,
@@ -74,6 +74,42 @@
       "source": "https://api.github.com/repos/leigest519/OpenGame",
       "exact_count": 2980,
       "display": "\u22483k stars"
+    },
+    "homepage_cover": {
+      "file": "opengame-cover.svg",
+      "type": "Ivory and champagne background with gently flowing light and a fixed wordmark",
+      "design": "Original vector cream/champagne/white base, a broad diagonal CSS satin highlight drifting over 24 seconds each way; fixed white glass edge and dark green Georgia Italic wordmark. No game imagery, carousel or controls.",
+      "size": [
+        960,
+        540
+      ],
+      "reference": "User-approved ivory/champagne glass treatment inspired by https://yelonhu.github.io/OpenGame-landing-page/",
+      "flow": {
+        "duration_seconds": 24,
+        "direction": "alternate",
+        "round_trip_seconds": 48,
+        "translation_percent": [
+          [
+            -12,
+            -5
+          ],
+          [
+            12,
+            5
+          ]
+        ],
+        "pauses": "Outside view, hidden page, hover, focus and reduced motion"
+      },
+      "outputs": {
+        "opengame-cover.svg": {
+          "bytes": 1242,
+          "sha256": "63501a545cb60ed9d038a2db1f47d932a6f418156f4cb86bca6a108a39779092"
+        },
+        "opengame-wordmark.svg": {
+          "bytes": 280,
+          "sha256": "8092c9e09a2e65923f7e3e3e70c904a32fef68bc1723c41e6745133e4dfe2c38"
+        }
+      }
     }
   },
   "physevolve": {
