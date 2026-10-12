@@ -76,38 +76,23 @@
       "display": "\u22483k stars"
     },
     "homepage_cover": {
-      "file": "opengame-cover.svg",
-      "type": "Ivory and champagne background with gently flowing light and a fixed wordmark",
-      "design": "Original vector cream/champagne/white base, a broad diagonal CSS satin highlight drifting over 24 seconds each way; fixed white glass edge and dark green Georgia Italic wordmark. No game imagery, carousel or controls.",
-      "size": [
-        960,
-        540
+      "type": "Static full method figure",
+      "source": "User-provided opengame_main_figure_edited.pdf",
+      "source_sha256": "b27f158eceb56de3d86cbc67e63867ebbd0937dbb58a947064ae655b1e9d89bc",
+      "pages": 1,
+      "original_page_points": [
+        928,
+        359
       ],
-      "reference": "User-approved ivory/champagne glass treatment inspired by https://yelonhu.github.io/OpenGame-landing-page/",
-      "flow": {
-        "duration_seconds": 24,
-        "direction": "alternate",
-        "round_trip_seconds": 48,
-        "translation_percent": [
-          [
-            -12,
-            -5
-          ],
-          [
-            12,
-            5
-          ]
-        ],
-        "pauses": "Outside view, hidden page, hover, focus and reduced motion"
-      },
+      "processing": "Rendered first page to lossless PNG at 1600px width using Poppler; complete diagram retained, no cropping, stretching, overlays or animation. Preview uses the original 928:359 aspect ratio at the existing column width; linked to the unchanged local PDF for full-size viewing.",
       "outputs": {
-        "opengame-cover.svg": {
-          "bytes": 1242,
-          "sha256": "63501a545cb60ed9d038a2db1f47d932a6f418156f4cb86bca6a108a39779092"
+        "opengame-main-figure.png": {
+          "bytes": 314630,
+          "sha256": "d2317108c11792192a9a070c50b6c3b7677d86606aace24f41bb77b920cb732b"
         },
-        "opengame-wordmark.svg": {
-          "bytes": 280,
-          "sha256": "8092c9e09a2e65923f7e3e3e70c904a32fef68bc1723c41e6745133e4dfe2c38"
+        "opengame-main-figure.pdf": {
+          "bytes": 474884,
+          "sha256": "b27f158eceb56de3d86cbc67e63867ebbd0937dbb58a947064ae655b1e9d89bc"
         }
       }
     }
