@@ -8,7 +8,8 @@
     <meta name="theme-color" content="#ffffff">
     <title>Jinyuan Hu | 胡锦源</title>
     <link rel="canonical" href="https://yelonhu.github.io/">
-    <link rel="icon" href="./assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="./favicon.ico" sizes="32x32">
+    <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="Jinyuan Hu">
@@ -21,8 +22,8 @@
     <meta property="og:image:alt" content="Jinyuan Hu, Computer Sciences at UW–Madison and research intern at CUHK MMLab">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preload" href="./assets/fonts/TitilliumWeb-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="./style.css?v=20261027-polish">
-    <script src="./previews.js?v=20261027-polish" defer></script>
+    <link rel="stylesheet" href="./style.css?v=20261027-news">
+    <script src="./previews.js?v=20261027-news" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -44,7 +45,7 @@
         <div class="profile-content">
           <div class="profile-photo">
             <img class="portrait" src="./assets/jinyuan-hu-440.jpg" srcset="./assets/jinyuan-hu-440.jpg 440w, ./assets/jinyuan-hu-660.jpg 660w" sizes="220px" alt="Jinyuan Hu" width="440" height="495" fetchpriority="high">
-            <p class="contact"><a href="mailto:jhu489@wisc.edu">Email</a> <span aria-hidden="true">|</span> <a href="https://github.com/yelonhu">GitHub</a> <span aria-hidden="true">|</span> <a href="https://scholar.google.com/citations?user=PdNg6lgAAAAJ&amp;hl=en" aria-label="Google Scholar">Scholar</a> <span aria-hidden="true">|</span> <a href="./assets/cv.pdf?v=20261026">CV</a></p>
+            <p class="contact"><a href="mailto:jhu489@wisc.edu">Email</a> <span aria-hidden="true">|</span> <a href="https://github.com/yelonhu">GitHub</a> <span aria-hidden="true">|</span> <a href="https://scholar.google.com/citations?user=PdNg6lgAAAAJ&amp;hl=en" aria-label="Google Scholar">Scholar</a> <span aria-hidden="true">|</span> <a href="./assets/cv.pdf?v=20261026">CV</a><!-- <span aria-hidden="true">|</span> <a href="https://x.com/hujinyuan11" aria-label="X (@hujinyuan11)">X</a> --></p>
           </div>
           <div class="bio">
             <p>Hi! <span aria-hidden="true">👋</span> I am Jinyuan Hu (<span class="chinese-name" lang="zh-Hans">胡锦源</span>), an undergraduate in Computer Sciences at the <a href="https://www.wisc.edu/">University of Wisconsin–Madison</a>. I transferred from <a href="https://www.cuhk.edu.hk/english/">The Chinese University of Hong Kong (CUHK)</a>.</p>
@@ -54,6 +55,33 @@
           </div>
         </div>
       </header>
+
+      <section aria-labelledby="news-heading">
+        <h2 id="news-heading">News</h2>
+        <ul class="news">
+          <li><time datetime="2026-09">Sep 2026</time> <p>Transferred from CUHK to the <a href="https://www.wisc.edu/">University of Wisconsin–Madison</a>.</p></li>
+          <li><time datetime="2026-04-21">Apr 2026</time> <p>Released <a href="https://github.com/leigest519/OpenGame">OpenGame</a>, which turns a prompt into a playable web game.</p></li>
+        </ul>
+      </section>
+
+      <section class="lab-notes" aria-labelledby="lab-notes-heading">
+        <h2 id="lab-notes-heading">Lab notes</h2>
+        <article class="lab-note" aria-labelledby="so101-act-title">
+          <div class="note-overview">
+            <div class="preview" data-preview data-label="SO-101 ACT">
+              <img class="preview-poster" src="./assets/robotics/so101-act/teaser.jpg" alt="SO-101 arm carrying an eraser over a box" width="640" height="360" loading="lazy">
+              <video id="so101-video" muted loop playsinline preload="none" poster="./assets/robotics/so101-act/teaser.jpg" data-src="./assets/robotics/so101-act/teaser.mp4" aria-label="SO-101 ACT pick-and-place run, 1× speed"></video>
+              <button class="preview-toggle" type="button" aria-controls="so101-video" hidden>Play</button>
+            </div>
+            <div class="note-intro">
+              <h3 id="so101-act-title"><a href="./notes/so101-act.html">Getting ACT running on a real arm</a></h3>
+              <p class="note-date"><time datetime="2026-10">October 2026</time></p>
+              <p>An early pick-and-place experiment with ACT, using demonstrations I collected by teleoperating my SO&#8209;101 arm.</p>
+              <p class="paper-links"><a href="./notes/so101-act.html">Read note</a></p>
+            </div>
+          </div>
+        </article>
+      </section>
 
       <section aria-labelledby="publications-heading">
         <h2 id="publications-heading">Publications</h2>
@@ -75,6 +103,7 @@
           </li>
           <li>
             <article class="publication" aria-labelledby="verse-title">
+              <div class="preview preview-empty" aria-hidden="true"></div>
               <div class="publication-info">
                 <h3 id="verse-title">VERSE: Verifiable Spatial Self-Evolution with Geometric Process Rewards</h3>
                 <p class="authors">Xinran Liu, Yilei Jiang, Tianshuo Peng, Kaixuan Fan, <strong>Jinyuan Hu</strong>, Xiangyu Yue</p>
@@ -94,25 +123,6 @@
             </article>
           </li>
         </ul>
-      </section>
-
-      <section class="lab-notes" aria-labelledby="lab-notes-heading">
-        <h2 id="lab-notes-heading">Lab notes</h2>
-        <article class="lab-note" aria-labelledby="so101-act-title">
-          <div class="note-overview">
-            <div class="preview" data-preview data-label="SO-101 ACT">
-              <img class="preview-poster" src="./assets/robotics/so101-act/teaser.jpg" alt="SO-101 arm carrying an eraser over a box" width="640" height="360" loading="lazy">
-              <video id="so101-video" muted loop playsinline preload="none" poster="./assets/robotics/so101-act/teaser.jpg" data-src="./assets/robotics/so101-act/teaser.mp4" aria-label="SO-101 ACT pick-and-place run, 1× speed"></video>
-              <button class="preview-toggle" type="button" aria-controls="so101-video" hidden>Play</button>
-            </div>
-            <div class="note-intro">
-              <h3 id="so101-act-title"><a href="./notes/so101-act.html">Getting ACT running on a real arm</a></h3>
-              <p class="note-date"><time datetime="2026-10">October 2026</time></p>
-              <p>An early pick-and-place experiment with ACT, using demonstrations I collected by teleoperating my SO&#8209;101 arm.</p>
-              <p class="paper-links"><a href="./notes/so101-act.html">Read note</a></p>
-            </div>
-          </div>
-        </article>
       </section>
 
       <section aria-labelledby="education-heading">

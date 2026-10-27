@@ -17,7 +17,7 @@
         928,
         359
       ],
-      "processing": "Rendered first page to lossless PNG at 1600px width using Poppler; complete diagram retained, no cropping, stretching, overlays or animation. Preview uses the original 928:359 aspect ratio at the existing column width; linked to the unchanged local PDF for full-size viewing. Desktop shows it on a #f4f4f2 mat inside the shared 16:9 thumbnail box; phones show it at its own aspect ratio.",
+      "processing": "Rendered first page to lossless PNG at 1600px width using Poppler; complete diagram retained, no cropping, stretching, overlays or animation. Preview uses the original 928:359 aspect ratio at the existing column width; linked to the unchanged local PDF for full-size viewing. Desktop shows it on a #fafaf9 mat inside the shared 16:9 thumbnail box; phones show it at its own aspect ratio.",
       "outputs": {
         "opengame-main-figure.png": {
           "bytes": 314630,

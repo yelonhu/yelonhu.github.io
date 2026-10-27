@@ -162,6 +162,24 @@ ul {
   list-style: none;
 }
 
+/* Dates hang in the media column so news text shares the page's text edge. */
+.news li {
+  display: grid;
+  grid-template-columns: var(--media-width) minmax(0, 1fr);
+  gap: var(--media-gap);
+}
+
+.news li + li {
+  margin-top: 6px;
+}
+
+.news time {
+  color: #555;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+}
+
 .publications li + li {
   margin-top: 28px;
 }
@@ -219,7 +237,11 @@ ul {
 /* Wide figures sit on a mat so every thumbnail keeps the same 16:9 box. */
 .preview-figure {
   display: block;
-  background: #f4f4f2;
+  background: #fafaf9;
+}
+
+.preview-empty {
+  background: none;
 }
 
 .preview-figure .preview-poster {
@@ -472,6 +494,19 @@ strong {
 
   .preview {
     max-width: 400px;
+  }
+
+  .preview-empty {
+    display: none;
+  }
+
+  .news li {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .news time {
+    text-align: left;
   }
 
   /* Stacked entries have no shared column to match, so show the figure whole. */
