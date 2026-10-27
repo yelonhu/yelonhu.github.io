@@ -29,6 +29,7 @@
         button.hidden = (motion.matches && autoplay) || this.failed || !observer;
         const action = video.paused ? 'Play' : 'Pause';
         button.textContent = action;
+        button.dataset.action = action.toLowerCase();
         button.setAttribute('aria-label', `${action} ${container.dataset.label} preview`);
       },
       async sync() {

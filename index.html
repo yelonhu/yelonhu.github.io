@@ -3,11 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jinyuan Hu (胡锦源), undergraduate student in Computer Sciences at the University of Wisconsin–Madison. Publications, robotics lab notes, and education.">
+    <meta name="description" content="Jinyuan Hu (胡锦源), Computer Sciences undergraduate at the University of Wisconsin–Madison and research intern at CUHK MMLab. Publications, robotics lab notes, and education.">
     <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#ffffff">
     <title>Jinyuan Hu | 胡锦源</title>
-    <link rel="stylesheet" href="./style.css?v=20261027-note-page">
-    <script src="./previews.js?v=20261027-note-page" defer></script>
+    <link rel="canonical" href="https://yelonhu.github.io/">
+    <link rel="icon" href="./assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Jinyuan Hu">
+    <meta property="og:title" content="Jinyuan Hu | 胡锦源">
+    <meta property="og:description" content="Computer Sciences undergraduate at UW–Madison and research intern at CUHK MMLab.">
+    <meta property="og:url" content="https://yelonhu.github.io/">
+    <meta property="og:image" content="https://yelonhu.github.io/assets/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Jinyuan Hu, Computer Sciences at UW–Madison and research intern at CUHK MMLab">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="./assets/fonts/TitilliumWeb-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./style.css?v=20261027-polish">
+    <script src="./previews.js?v=20261027-polish" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jinyuan Hu",
+        "alternateName": "胡锦源",
+        "url": "https://yelonhu.github.io/",
+        "image": "https://yelonhu.github.io/assets/jinyuan-hu-660.jpg",
+        "email": "mailto:jhu489@wisc.edu",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Wisconsin–Madison" },
+        "sameAs": ["https://github.com/yelonhu", "https://scholar.google.com/citations?user=PdNg6lgAAAAJ"]
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -15,14 +43,14 @@
         <h1><span class="english-name">Jinyuan Hu</span></h1>
         <div class="profile-content">
           <div class="profile-photo">
-            <img class="portrait" src="./assets/jinyuan-hu-retouched.png" alt="Jinyuan Hu" width="1122" height="1402">
+            <img class="portrait" src="./assets/jinyuan-hu-440.jpg" srcset="./assets/jinyuan-hu-440.jpg 440w, ./assets/jinyuan-hu-660.jpg 660w" sizes="220px" alt="Jinyuan Hu" width="440" height="495" fetchpriority="high">
             <p class="contact"><a href="mailto:jhu489@wisc.edu">Email</a> <span aria-hidden="true">|</span> <a href="https://github.com/yelonhu">GitHub</a> <span aria-hidden="true">|</span> <a href="https://scholar.google.com/citations?user=PdNg6lgAAAAJ&amp;hl=en" aria-label="Google Scholar">Scholar</a> <span aria-hidden="true">|</span> <a href="./assets/cv.pdf?v=20261026">CV</a></p>
           </div>
           <div class="bio">
-            <p>Hi <span aria-hidden="true">👋</span>! I am Jinyuan Hu (<span class="chinese-name" lang="zh-Hans">胡锦源</span>), an undergraduate student studying Computer Sciences at the <a href="https://www.wisc.edu/">University of Wisconsin–Madison</a>. I transferred from <a href="https://www.cuhk.edu.hk/english/">The Chinese University of Hong Kong (CUHK)</a>.</p>
+            <p>Hi! <span aria-hidden="true">👋</span> I am Jinyuan Hu (<span class="chinese-name" lang="zh-Hans">胡锦源</span>), an undergraduate in Computer Sciences at the <a href="https://www.wisc.edu/">University of Wisconsin–Madison</a>. I transferred from <a href="https://www.cuhk.edu.hk/english/">The Chinese University of Hong Kong (CUHK)</a>.</p>
             <p>I am also a research intern at <a href="https://mmlab.ie.cuhk.edu.hk/">CUHK MMLab</a>, working with <a href="https://xyue.io/">Prof. Xiangyu Yue</a>.</p>
-            <p>I am interested in learning and adaptation through interaction and feedback. Moving forward, I aim to focus on robotics. This includes adapting robot policies to contact-rich manipulation with limited new experience.</p>
-            <p class="hardware">I build and run an <a href="https://github.com/TheRobotStudio/SO-ARM100">SO-101</a> arm at home for closed-loop experiments. <a href="#lab-notes-heading">Lab notes</a>.</p>
+            <p>I am interested in learning and adaptation through interaction and feedback, and I am now turning to robotics: adapting robot policies to contact-rich manipulation with limited new experience.</p>
+            <p class="hardware">I built an <a href="https://github.com/TheRobotStudio/SO-ARM100">SO&#8209;101</a> arm at home for closed-loop experiments, and keep <a href="#lab-notes-heading">lab notes</a> on what I learn.</p>
           </div>
         </div>
       </header>
@@ -39,7 +67,7 @@
                 <button class="preview-toggle" type="button" aria-controls="physevolve-video" hidden>Play</button>
               </div>
               <div class="publication-info">
-                <h3 id="physevolve-title">PhysEvolve: Verifier-Grounded Self-Evolution for Physical Reasoning with Executable Worlds</h3>
+                <h3 id="physevolve-title"><a href="https://yelonhu.github.io/physevolve-page/">PhysEvolve: Verifier-Grounded Self-Evolution for Physical Reasoning with Executable Worlds</a></h3>
                 <p class="authors"><strong>Jinyuan Hu</strong>, Yilei Jiang, Chen Tang, Minghong Cai, Xinran Liu, Xiangyu Yue</p>
                 <p class="paper-links"><a href="https://yelonhu.github.io/physevolve-page/">Project</a> <span aria-hidden="true">/</span> <a href="https://github.com/yelonhu/PhysEvolve">Code</a></p>
               </div>
@@ -59,9 +87,9 @@
                 <img class="preview-poster" src="./assets/opengame-main-figure.png" alt="OpenGame overview: code model training, autonomous agent workflow, and game skill evolution" width="1600" height="619" loading="lazy" decoding="async">
               </a>
               <div class="publication-info">
-                <h3 id="opengame-title">OpenGame: Open Agentic Coding for Games</h3>
+                <h3 id="opengame-title"><a href="https://yelonhu.github.io/OpenGame-landing-page/">OpenGame: Open Agentic Coding for Games</a></h3>
                 <p class="authors">Yilei Jiang, <strong>Jinyuan Hu</strong>, Qianyin Xiao, Yaozhi Zheng, Ruize Ma, Kaituo Feng, Jiaming Han, Tianshuo Peng, Kaixuan Fan, Manyuan Zhang, Xiangyu Yue</p>
-                <p class="paper-links"><a href="https://yelonhu.github.io/OpenGame-landing-page/">Project</a> <span aria-hidden="true">/</span> <a href="https://github.com/leigest519/OpenGame">Code <small class="github-stars" aria-label="approximately three thousand GitHub stars">(≈3k stars)</small></a> <span aria-hidden="true">/</span> <a href="https://arxiv.org/abs/2604.18394" aria-label="OpenGame on arXiv">arXiv</a></p>
+                <p class="paper-links"><a href="https://yelonhu.github.io/OpenGame-landing-page/">Project</a> <span aria-hidden="true">/</span> <a href="https://github.com/leigest519/OpenGame">Code <small class="github-stars" aria-label="over three thousand GitHub stars">(3k+ stars)</small></a> <span aria-hidden="true">/</span> <a href="https://arxiv.org/abs/2604.18394" aria-label="OpenGame on arXiv">arXiv</a></p>
               </div>
             </article>
           </li>
@@ -72,13 +100,13 @@
         <h2 id="lab-notes-heading">Lab notes</h2>
         <article class="lab-note" aria-labelledby="so101-act-title">
           <div class="note-overview">
-            <div class="preview" data-preview data-autoplay="false" data-label="SO-101 ACT">
-              <img class="preview-poster" src="./assets/robotics/so101-act/pick-and-place.jpg" alt="SO-101 arm lifting an eraser toward a box" width="1280" height="720" loading="lazy">
-              <video id="so101-video" muted playsinline preload="none" poster="./assets/robotics/so101-act/pick-and-place.jpg" data-src="./assets/robotics/so101-act/pick-and-place.mp4" aria-label="SO-101 ACT pick-and-place demonstration"></video>
+            <div class="preview" data-preview data-label="SO-101 ACT">
+              <img class="preview-poster" src="./assets/robotics/so101-act/teaser.jpg" alt="SO-101 arm carrying an eraser over a box" width="640" height="360" loading="lazy">
+              <video id="so101-video" muted loop playsinline preload="none" poster="./assets/robotics/so101-act/teaser.jpg" data-src="./assets/robotics/so101-act/teaser.mp4" aria-label="SO-101 ACT pick-and-place run, 1× speed"></video>
               <button class="preview-toggle" type="button" aria-controls="so101-video" hidden>Play</button>
             </div>
             <div class="note-intro">
-              <h3 id="so101-act-title">Getting ACT running on a real arm</h3>
+              <h3 id="so101-act-title"><a href="./notes/so101-act.html">Getting ACT running on a real arm</a></h3>
               <p class="note-date"><time datetime="2026-10">October 2026</time></p>
               <p>An early pick-and-place experiment with ACT, using demonstrations I collected by teleoperating my SO&#8209;101 arm.</p>
               <p class="paper-links"><a href="./notes/so101-act.html">Read note</a></p>

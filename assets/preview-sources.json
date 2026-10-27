@@ -1,79 +1,12 @@
 {
   "created": "2026-10-11",
   "opengame": {
-    "sources": [
-      {
-        "url": "https://yelonhu.github.io/OpenGame-landing-page/hero/harryPotter_2.mp4",
-        "source_sha256": "8af1d6c773c7c2156ba1132201aa81b45e79f5ffa0eb0963246c464ca9568a06",
-        "start_seconds": 3.3,
-        "duration_seconds": 3.2
-      },
-      {
-        "url": "https://yelonhu.github.io/OpenGame-landing-page/demos/hajimi.mp4",
-        "source_sha256": "993ee6b9b8a8d7fc3851d4f2223118136032ada0abd51472cfeb6d972496ad38",
-        "start_seconds": 3,
-        "duration_seconds": 3.2
-      },
-      {
-        "url": "https://yelonhu.github.io/OpenGame-landing-page/demos/starWars.mp4",
-        "source_sha256": "ebe0cbe6eece09d90be9fb04535c283dbde621c48604be251dfd7107898383b4",
-        "start_seconds": 2,
-        "duration_seconds": 3.2
-      }
-    ],
-    "order": [
-      "harryPotter-hero",
-      "hajimi",
-      "starWars"
-    ],
-    "duration_seconds": 8.966666666666667,
-    "frame_count": 269,
-    "size": [
-      960,
-      540
-    ],
-    "fps": 30,
-    "codec": "H.264 / yuv420p",
-    "audio": false,
-    "fast_start": true,
-    "encoding": {
-      "preset": "slow",
-      "crf": 23
-    },
-    "transitions": {
-      "type": "crossfade",
-      "duration_seconds": 0.3,
-      "offsets_seconds": [
-        2.9,
-        5.8
-      ]
-    },
-    "framing": "Scale proportionally to cover 960x540, then center-crop vertical excess before compositing the title; no padding or stretching.",
-    "variant_b": "Persistent 70% black scrim applied by scaling RGB channels equally to preserve color, no vignette, centered white Georgia Italic OpenGame title throughout; same nine-second gameplay montage. Retained as an earlier video variant.",
-    "outputs": {
-      "opengame-montage-poster.jpg": {
-        "bytes": 108117,
-        "sha256": "f1be1f46a11e31ef5b985a06ef23e897fdc9833aa3805b4752768955a53985fb"
-      },
-      "opengame-trailer-poster.jpg": {
-        "bytes": 60344,
-        "sha256": "fa0b832ab01ada69bb7b70e96e3ddb95ae16cd751903279aeb84bdfdb90ed57c"
-      },
-      "opengame-trailer.mp4": {
-        "bytes": 362096,
-        "sha256": "32dc94c9d05669518f173ee45a10d5ece1558beae50a97daeff035ac754c1263"
-      },
-      "opengame-montage.mp4": {
-        "bytes": 690525,
-        "sha256": "5cc6f6b009aba737e2b01753a7db883bfec1f000700bd4c02cdf16b031102ff1"
-      }
-    },
-    "variant_b_filter": "format=rgb24,lutrgb=r=val*0.30:g=val*0.30:b=val*0.30,drawtext=fontfile='/System/Library/Fonts/Supplemental/Georgia Italic.ttf':text='OpenGame':fontsize=92:fontcolor=white@0.96:x=(w-tw)/2:y=(h-th)/2:shadowcolor=black@0.5:shadowx=0:shadowy=2",
+    "note": "Earlier gameplay montage, trailer and light-cover variants were removed on 2026-10-27; their recipes remain in git history.",
     "github_stars": {
-      "verified_on": "2026-10-11",
+      "verified_on": "2026-10-27",
       "source": "https://api.github.com/repos/leigest519/OpenGame",
-      "exact_count": 2980,
-      "display": "\u22483k stars"
+      "exact_count": 3030,
+      "display": "3k+ stars"
     },
     "homepage_cover": {
       "type": "Static full method figure",
@@ -84,7 +17,7 @@
         928,
         359
       ],
-      "processing": "Rendered first page to lossless PNG at 1600px width using Poppler; complete diagram retained, no cropping, stretching, overlays or animation. Preview uses the original 928:359 aspect ratio at the existing column width; linked to the unchanged local PDF for full-size viewing.",
+      "processing": "Rendered first page to lossless PNG at 1600px width using Poppler; complete diagram retained, no cropping, stretching, overlays or animation. Preview uses the original 928:359 aspect ratio at the existing column width; linked to the unchanged local PDF for full-size viewing. Desktop shows it on a #f4f4f2 mat inside the shared 16:9 thumbnail box; phones show it at its own aspect ratio.",
       "outputs": {
         "opengame-main-figure.png": {
           "bytes": 314630,
@@ -104,5 +37,14 @@
     ],
     "processing": "Copied byte-for-byte; no re-encoding.",
     "source": "Delivered PhysEvolve project-page assets (site/assets), copied into this homepage."
+  },
+  "portrait": {
+    "source": "assets/jinyuan-hu-retouched.png (local only, ignored by Git)",
+    "processing": "8:9 crop at the old CSS framing (center, 35% from top), Lanczos resize to 440 and 660 px wide, JPEG quality 84 progressive.",
+    "outputs": [
+      "jinyuan-hu-440.jpg",
+      "jinyuan-hu-660.jpg",
+      "share-card.jpg (1200x630 link preview)"
+    ]
   }
 }
