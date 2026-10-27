@@ -1,7 +1,8 @@
 Owl favicon
 Original drawing for this site (no third-party artwork).
 
-favicon.svg: ink owl (#2A2A2A) with white eyes and an amber beak; the body
-turns light gray (#A9A9AE) under a dark browser theme so it stays visible.
+favicon.svg: ink owl (#2A2A2A) with white eyes and an amber beak, wrapped in
+a white outline so the silhouette stays visible on dark browser tabs. The
+viewBox is cropped to the outline so the owl fills the tab icon.
 ../../favicon.ico (16/32/48 px) and apple-touch-icon.png (owl centered on
-white, 180 px) are rasterized from the light version.
+white, 180 px) are rasterized from the same SVG.
