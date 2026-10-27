@@ -6,8 +6,8 @@
     <meta name="description" content="Jinyuan Hu (胡锦源), undergraduate student in Computer Sciences at the University of Wisconsin–Madison. Publications, robotics lab notes, and education.">
     <meta name="color-scheme" content="light">
     <title>Jinyuan Hu | 胡锦源</title>
-    <link rel="stylesheet" href="./style.css?v=20261027-lab-notes">
-    <script src="./previews.js?v=20261027-lab-notes" defer></script>
+    <link rel="stylesheet" href="./style.css?v=20261027-note-page">
+    <script src="./previews.js?v=20261027-note-page" defer></script>
   </head>
   <body>
     <main>
@@ -72,45 +72,18 @@
         <h2 id="lab-notes-heading">Lab notes</h2>
         <article class="lab-note" aria-labelledby="so101-act-title">
           <div class="note-overview">
-            <figure class="note-media">
-              <video controls muted playsinline preload="metadata" width="1280" height="720" poster="./assets/robotics/so101-act/pick-and-place.jpg" aria-label="SO-101 ACT pick-and-place, shoulder and elbow target-offset limits of 5 degrees">
-                <source src="./assets/robotics/so101-act/pick-and-place.mp4" type="video/mp4">
-                <a href="./assets/robotics/so101-act/pick-and-place.mp4">Watch the pick-and-place video</a>.
-              </video>
-              <figcaption>Pick-and-place · 1× speed</figcaption>
-            </figure>
+            <div class="preview" data-preview data-autoplay="false" data-label="SO-101 ACT">
+              <img class="preview-poster" src="./assets/robotics/so101-act/pick-and-place.jpg" alt="SO-101 arm lifting an eraser toward a box" width="1280" height="720" loading="lazy">
+              <video id="so101-video" muted playsinline preload="none" poster="./assets/robotics/so101-act/pick-and-place.jpg" data-src="./assets/robotics/so101-act/pick-and-place.mp4" aria-label="SO-101 ACT pick-and-place demonstration"></video>
+              <button class="preview-toggle" type="button" aria-controls="so101-video" hidden>Play</button>
+            </div>
             <div class="note-intro">
-              <p class="note-date"><time datetime="2026-10">October 2026</time> · SO-101</p>
               <h3 id="so101-act-title">Getting ACT running on a real arm</h3>
-              <p>I trained ACT on nine demonstrations I collected by teleoperating my SO&#8209;101 arm. In this early experiment, the policy picks up an eraser and places it into a box.</p>
+              <p class="note-date"><time datetime="2026-10">October 2026</time></p>
+              <p>An early pick-and-place experiment with ACT, using demonstrations I collected by teleoperating my SO&#8209;101 arm.</p>
+              <p class="paper-links"><a href="./notes/so101-act.html">Read note</a></p>
             </div>
           </div>
-          <details class="lab-note-details">
-            <summary>Setup &amp; deployment notes</summary>
-            <div class="note-details-content">
-              <p class="note-observation">One useful deployment adjustment: increasing the shoulder and elbow target-offset limits from 2° to 5° made lifting smoother in the later run, with the model and training data unchanged. These offsets are relative to the current joint angles; the other arm joints remained limited to 2°.</p>
-              <div class="note-setup">
-                <dl>
-                  <dt>Data</dt>
-                  <dd>10 teleoperated demonstrations, without the final return-to-home motion. I excluded one with an anomalous start and trained on the remaining 9.</dd>
-                  <dt>Training</dt>
-                  <dd>ACT, 20,000 training steps.</dd>
-                  <dt>Inputs</dt>
-                  <dd>One image from each of two cameras and a 6-dimensional joint state, predicting the next 30 actions.</dd>
-                  <dt>Execution</dt>
-                  <dd>Execute all 30 actions before predicting again; no temporal ensembling; a 15-second rollout budget. Small predicted excursions beyond joint limits were clipped to the valid range.</dd>
-                </dl>
-                <figure class="note-media note-comparison">
-                  <video controls muted playsinline preload="none" width="1280" height="720" poster="./assets/robotics/so101-act/earlier-run.jpg" aria-label="Earlier SO-101 ACT run, shoulder and elbow target-offset limits of 2 degrees">
-                    <source src="./assets/robotics/so101-act/earlier-run.mp4" type="video/mp4">
-                    <a href="./assets/robotics/so101-act/earlier-run.mp4">Watch the earlier run</a>.
-                  </video>
-                  <figcaption>Earlier run · 2° shoulder / elbow limit<br>Same policy and data · 1× speed</figcaption>
-                </figure>
-              </div>
-              <p class="note-footnote">The main video uses the 5° shoulder / elbow limit. Both clips are shown at their recorded speed, with lead-in and trailing footage trimmed and audio removed.</p>
-            </div>
-          </details>
         </article>
       </section>
 

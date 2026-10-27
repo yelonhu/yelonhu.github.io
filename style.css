@@ -155,7 +155,8 @@ ul {
   font-size: 17px;
 }
 
-.publication {
+.publication,
+.note-overview {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   align-items: start;
@@ -231,8 +232,8 @@ ul {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .preview.has-frame video,
-  .preview-toggle {
+  .preview:not([data-autoplay="false"]).has-frame video,
+  .preview:not([data-autoplay="false"]) .preview-toggle {
     visibility: hidden;
   }
 }
@@ -265,13 +266,6 @@ strong {
   white-space: nowrap;
 }
 
-.note-overview {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
-}
-
 .note-media {
   min-width: 0;
   margin: 0;
@@ -299,64 +293,53 @@ strong {
 }
 
 .note-date {
-  margin-bottom: 4px;
+  margin: 2px 0 6px;
 }
 
 .note-intro h3 {
-  margin-bottom: 6px;
+  margin: 0;
 }
 
-.lab-note-details {
-  margin-top: 12px;
-}
-
-.lab-note-details summary {
-  width: fit-content;
-  padding: 4px 0;
-  color: #1772d0;
-  font-size: 14px;
-  cursor: pointer;
-  text-underline-offset: 3px;
-}
-
-.lab-note-details summary:hover {
-  text-decoration: underline;
-}
-
-.lab-note-details summary:focus-visible,
 .note-media video:focus-visible {
   outline: 2px solid #1772d0;
   outline-offset: 4px;
   border-radius: 2px;
 }
 
-.note-details-content {
-  margin-top: 12px;
-  padding-top: 16px;
-  border-top: 1px solid #e4e4e4;
+.note-back {
+  margin-bottom: 28px;
   font-size: 15px;
 }
 
-.note-setup {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 24px;
-  align-items: start;
-  margin-top: 18px;
+.note-page h1 {
+  display: block;
+  margin: 8px 0 14px;
+  text-align: left;
+  font-size: 28px;
 }
 
-.note-setup dl {
+.note-main-video {
+  max-width: 600px;
+  margin: 24px auto 0;
+}
+
+.note-earlier-video {
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.note-parameters {
   display: grid;
-  grid-template-columns: 66px minmax(0, 1fr);
-  gap: 10px 14px;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 14px 20px;
   margin: 0;
 }
 
-.note-setup dt {
+.note-parameters dt {
   color: #555;
 }
 
-.note-setup dd {
+.note-parameters dd {
   margin: 0;
 }
 
@@ -410,34 +393,17 @@ strong {
 }
 
 @media (max-width: 600px) {
-  .note-overview,
-  .note-setup {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .note-intro {
-    grid-row: 1;
-  }
-
-  .note-media {
-    max-width: 400px;
-  }
-
-  .note-details-content {
-    font-size: 16px;
-  }
-
-  .note-setup dl {
+  .note-parameters {
     grid-template-columns: minmax(0, 1fr);
     gap: 4px;
   }
 
-  .note-setup dd + dt {
+  .note-parameters dd + dt {
     margin-top: 10px;
   }
 
-  .publication {
+  .publication,
+  .note-overview {
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
   }

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A lab note by Jinyuan Hu on teleoperated demonstrations, ACT training, and deploying a pick-and-place policy on SO-101.">
+    <meta name="color-scheme" content="light">
+    <title>Getting ACT running on a real arm | Jinyuan Hu</title>
+    <link rel="stylesheet" href="../style.css?v=20261027-note-page">
+    <script src="../previews.js?v=20261027-note-page" defer></script>
+  </head>
+  <body>
+    <main class="note-page">
+      <nav class="note-back" aria-label="Back to homepage"><a href="../index.html#lab-notes-heading">← Jinyuan Hu / Lab notes</a></nav>
+      <article class="lab-note">
+        <header class="note-header">
+          <p class="note-date"><time datetime="2026-10">October 2026</time> · Personal experiment</p>
+          <h1>Getting ACT running on a real arm</h1>
+          <p>I trained ACT on nine demonstrations I collected by teleoperating my SO&#8209;101 arm. In this early experiment, the policy picks up an eraser and places it into a box.</p>
+        </header>
+        <figure class="note-media note-main-video">
+          <video controls muted playsinline preload="metadata" width="1280" height="720" poster="../assets/robotics/so101-act/pick-and-place.jpg" aria-label="Later SO-101 ACT run, shoulder and elbow target-offset limits of 5 degrees">
+            <source src="../assets/robotics/so101-act/pick-and-place.mp4" type="video/mp4">
+            <a href="../assets/robotics/so101-act/pick-and-place.mp4">Watch the pick-and-place video</a>.
+          </video>
+          <figcaption>Later run · 5° shoulder / elbow target-offset limit · 1× speed</figcaption>
+        </figure>
+
+        <section aria-labelledby="setup-heading">
+          <h2 id="setup-heading">Setup</h2>
+          <dl class="note-parameters">
+            <dt>Data</dt>
+            <dd>10 teleoperated demonstrations, without the final return-to-home motion. I excluded one with an anomalous start and trained on the remaining 9.</dd>
+            <dt>Training</dt>
+            <dd>ACT, 20,000 training steps.</dd>
+            <dt>Inputs</dt>
+            <dd>One image from each of two cameras and a 6-dimensional joint state, predicting the next 30 actions.</dd>
+            <dt>Execution</dt>
+            <dd>Execute all 30 actions before predicting again; no temporal ensembling; a 15-second rollout budget. Small predicted excursions beyond joint limits were clipped to the valid range.</dd>
+          </dl>
+        </section>
+
+        <section aria-labelledby="deployment-heading">
+          <h2 id="deployment-heading">A deployment observation</h2>
+          <p>Increasing the shoulder and elbow target-offset limits from 2° to 5° made lifting smoother in the later run, with the model and training data unchanged. These offsets are relative to the current joint angles; the other arm joints remained limited to 2°.</p>
+          <figure class="note-media note-earlier-video">
+            <video controls muted playsinline preload="none" width="1280" height="720" poster="../assets/robotics/so101-act/earlier-run.jpg" aria-label="Earlier SO-101 ACT run, shoulder and elbow target-offset limits of 2 degrees">
+              <source src="../assets/robotics/so101-act/earlier-run.mp4" type="video/mp4">
+              <a href="../assets/robotics/so101-act/earlier-run.mp4">Watch the earlier run</a>.
+            </video>
+            <figcaption>Earlier run · 2° shoulder / elbow target-offset limit<br>Same policy and training data · 1× speed</figcaption>
+          </figure>
+          <p class="note-footnote">Both clips are shown at their recorded speed, with lead-in and trailing footage trimmed and audio removed.</p>
+        </section>
+      </article>
+      <footer class="site-footer"><p><a href="../index.html#lab-notes-heading">Back to lab notes</a></p></footer>
+    </main>
+  </body>
+</html>

@@ -11,4 +11,4 @@ Posters are unaltered frames from the respective originals at 9.8 s and 22.8 s. 
 
 Both recordings use the same trained ACT policy and data. The shorter original is the later run, with shoulder and elbow target offsets (relative to current angles) increased from 2° to 5°. Other arm joints retain the 2° limit. The note records an initial experiment, not a success-rate evaluation.
 
-The visible note and experiment details live in `index.html`. Keep future lab notes separate from publications; multiple runs of the same experiment belong in one note.
+The homepage teaser lives in `index.html`; the full record and deployment details live in `notes/so101-act.html`. Keep future lab notes separate from publications; multiple runs of the same experiment belong in one note.

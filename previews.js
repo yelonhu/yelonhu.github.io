@@ -1,4 +1,4 @@
-/* Shared, progressively enhanced publication previews. */
+/* Shared, progressively enhanced publication and lab-note previews. */
 (() => {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const previews = [];
@@ -16,16 +16,17 @@
     const video = container.querySelector('video');
     const button = container.querySelector('.preview-toggle');
     if (!video || !button) return;
+    const autoplay = container.dataset.autoplay !== 'false';
 
     const state = {
-      container, visible: false, userPaused: false, blocked: false,
+      container, visible: false, userPaused: !autoplay, blocked: false,
       failed: false, pending: false,
       allowed() {
-        return this.visible && !document.hidden && !motion.matches
+        return this.visible && !document.hidden && (!motion.matches || !autoplay)
           && !this.userPaused && !this.blocked && !this.failed;
       },
       updateButton() {
-        button.hidden = motion.matches || this.failed || !observer;
+        button.hidden = (motion.matches && autoplay) || this.failed || !observer;
         const action = video.paused ? 'Play' : 'Pause';
         button.textContent = action;
         button.setAttribute('aria-label', `${action} ${container.dataset.label} preview`);
@@ -34,7 +35,7 @@
         this.updateButton();
         if (!this.allowed()) {
           video.pause();
-          if (motion.matches || this.failed || this.blocked) {
+          if ((motion.matches && autoplay) || this.failed || this.blocked) {
             container.classList.remove('has-frame');
           }
           return;
@@ -67,12 +68,16 @@
       state.updateButton();
     });
     video.addEventListener('pause', () => state.updateButton());
+    video.addEventListener('ended', () => {
+      state.userPaused = true;
+      state.updateButton();
+    });
     video.addEventListener('error', () => {
       state.failed = true;
       state.sync();
     });
     button.addEventListener('click', () => {
-      if (motion.matches) return;
+      if (motion.matches && autoplay) return;
       if (!video.paused || state.pending) state.userPaused = true;
       else {
         state.userPaused = false;
@@ -93,16 +98,11 @@
   });
   window.addEventListener('pageshow', syncAll);
 
-  // Lab notes use native, click-to-play controls, including without JavaScript.
+  // Full notes use native controls, including without JavaScript.
   document.querySelectorAll('.lab-note').forEach(note => {
-    const videos = [...note.querySelectorAll('video')];
+    const videos = [...note.querySelectorAll('video[controls]')];
     videos.forEach(video => video.addEventListener('play', () => {
       videos.forEach(other => { if (other !== video) other.pause(); });
     }));
-    note.querySelectorAll('details').forEach(details => {
-      details.addEventListener('toggle', () => {
-        if (!details.open) details.querySelectorAll('video').forEach(video => video.pause());
-      });
-    });
   });
 })();
