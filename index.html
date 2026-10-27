@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jinyuan Hu (胡锦源), undergraduate student in Computer Sciences at the University of Wisconsin–Madison. Publications and education.">
+    <meta name="description" content="Jinyuan Hu (胡锦源), undergraduate student in Computer Sciences at the University of Wisconsin–Madison. Publications, robotics lab notes, and education.">
     <meta name="color-scheme" content="light">
     <title>Jinyuan Hu | 胡锦源</title>
-    <link rel="stylesheet" href="./style.css?v=20261022-intro">
-    <script src="./previews.js" defer></script>
+    <link rel="stylesheet" href="./style.css?v=20261027-lab-notes">
+    <script src="./previews.js?v=20261027-lab-notes" defer></script>
   </head>
   <body>
     <main>
@@ -22,10 +22,7 @@
             <p>Hi <span aria-hidden="true">👋</span>! I am Jinyuan Hu (<span class="chinese-name" lang="zh-Hans">胡锦源</span>), an undergraduate student studying Computer Sciences at the <a href="https://www.wisc.edu/">University of Wisconsin–Madison</a>. I transferred from <a href="https://www.cuhk.edu.hk/english/">The Chinese University of Hong Kong (CUHK)</a>.</p>
             <p>I am also a research intern at <a href="https://mmlab.ie.cuhk.edu.hk/">CUHK MMLab</a>, working with <a href="https://xyue.io/">Prof. Xiangyu Yue</a>.</p>
             <p>I am interested in learning and adaptation through interaction and feedback. Moving forward, I aim to focus on robotics. This includes adapting robot policies to contact-rich manipulation with limited new experience.</p>
-            <p class="hardware">I build and run an <a href="https://github.com/TheRobotStudio/SO-ARM100">SO-101</a> arm at home for closed-loop experiments.<!-- When the clip exists: <a href="VIDEO_URL">Video</a>. --></p>
-            <!-- SO-101 loop (add when ready; 8–10 s, 720p H.264, ≤5 MB, no audio):
-            <video class="hardware-loop" src="./assets/so101-loop.mp4" autoplay muted loop playsinline aria-label="SO-101 arm running an ACT policy"></video>
-            -->
+            <p class="hardware">I build and run an <a href="https://github.com/TheRobotStudio/SO-ARM100">SO-101</a> arm at home for closed-loop experiments. <a href="#lab-notes-heading">Lab notes</a>.</p>
           </div>
         </div>
       </header>
@@ -69,6 +66,52 @@
             </article>
           </li>
         </ul>
+      </section>
+
+      <section class="lab-notes" aria-labelledby="lab-notes-heading">
+        <h2 id="lab-notes-heading">Lab notes</h2>
+        <article class="lab-note" aria-labelledby="so101-act-title">
+          <div class="note-overview">
+            <figure class="note-media">
+              <video controls muted playsinline preload="metadata" width="1280" height="720" poster="./assets/robotics/so101-act/pick-and-place.jpg" aria-label="SO-101 ACT pick-and-place, shoulder and elbow target-offset limits of 5 degrees">
+                <source src="./assets/robotics/so101-act/pick-and-place.mp4" type="video/mp4">
+                <a href="./assets/robotics/so101-act/pick-and-place.mp4">Watch the pick-and-place video</a>.
+              </video>
+              <figcaption>Pick-and-place · 1× speed</figcaption>
+            </figure>
+            <div class="note-intro">
+              <p class="note-date"><time datetime="2026-10">October 2026</time> · SO-101</p>
+              <h3 id="so101-act-title">Getting ACT running on a real arm</h3>
+              <p>I trained ACT on nine demonstrations I collected by teleoperating my SO&#8209;101 arm. In this early experiment, the policy picks up an eraser and places it into a box.</p>
+            </div>
+          </div>
+          <details class="lab-note-details">
+            <summary>Setup &amp; deployment notes</summary>
+            <div class="note-details-content">
+              <p class="note-observation">One useful deployment adjustment: increasing the shoulder and elbow target-offset limits from 2° to 5° made lifting smoother in the later run, with the model and training data unchanged. These offsets are relative to the current joint angles; the other arm joints remained limited to 2°.</p>
+              <div class="note-setup">
+                <dl>
+                  <dt>Data</dt>
+                  <dd>10 teleoperated demonstrations, without the final return-to-home motion. I excluded one with an anomalous start and trained on the remaining 9.</dd>
+                  <dt>Training</dt>
+                  <dd>ACT, 20,000 training steps.</dd>
+                  <dt>Inputs</dt>
+                  <dd>One image from each of two cameras and a 6-dimensional joint state, predicting the next 30 actions.</dd>
+                  <dt>Execution</dt>
+                  <dd>Execute all 30 actions before predicting again; no temporal ensembling; a 15-second rollout budget. Small predicted excursions beyond joint limits were clipped to the valid range.</dd>
+                </dl>
+                <figure class="note-media note-comparison">
+                  <video controls muted playsinline preload="none" width="1280" height="720" poster="./assets/robotics/so101-act/earlier-run.jpg" aria-label="Earlier SO-101 ACT run, shoulder and elbow target-offset limits of 2 degrees">
+                    <source src="./assets/robotics/so101-act/earlier-run.mp4" type="video/mp4">
+                    <a href="./assets/robotics/so101-act/earlier-run.mp4">Watch the earlier run</a>.
+                  </video>
+                  <figcaption>Earlier run · 2° shoulder / elbow limit<br>Same policy and data · 1× speed</figcaption>
+                </figure>
+              </div>
+              <p class="note-footnote">The main video uses the 5° shoulder / elbow limit. Both clips are shown at their recorded speed, with lead-in and trailing footage trimmed and audio removed.</p>
+            </div>
+          </details>
+        </article>
       </section>
 
       <section aria-labelledby="education-heading">

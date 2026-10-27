@@ -92,4 +92,17 @@
     previews.forEach(preview => preview.container.querySelector('video').pause());
   });
   window.addEventListener('pageshow', syncAll);
+
+  // Lab notes use native, click-to-play controls, including without JavaScript.
+  document.querySelectorAll('.lab-note').forEach(note => {
+    const videos = [...note.querySelectorAll('video')];
+    videos.forEach(video => video.addEventListener('play', () => {
+      videos.forEach(other => { if (other !== video) other.pause(); });
+    }));
+    note.querySelectorAll('details').forEach(details => {
+      details.addEventListener('toggle', () => {
+        if (!details.open) details.querySelectorAll('video').forEach(video => video.pause());
+      });
+    });
+  });
 })();

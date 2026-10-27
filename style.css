@@ -265,6 +265,105 @@ strong {
   white-space: nowrap;
 }
 
+.note-overview {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.note-media {
+  min-width: 0;
+  margin: 0;
+}
+
+.note-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: #191b20;
+}
+
+.note-media figcaption,
+.note-date,
+.note-footnote {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.note-media figcaption {
+  margin-top: 6px;
+}
+
+.note-date {
+  margin-bottom: 4px;
+}
+
+.note-intro h3 {
+  margin-bottom: 6px;
+}
+
+.lab-note-details {
+  margin-top: 12px;
+}
+
+.lab-note-details summary {
+  width: fit-content;
+  padding: 4px 0;
+  color: #1772d0;
+  font-size: 14px;
+  cursor: pointer;
+  text-underline-offset: 3px;
+}
+
+.lab-note-details summary:hover {
+  text-decoration: underline;
+}
+
+.lab-note-details summary:focus-visible,
+.note-media video:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.note-details-content {
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e4e4e4;
+  font-size: 15px;
+}
+
+.note-setup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.note-setup dl {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+  gap: 10px 14px;
+  margin: 0;
+}
+
+.note-setup dt {
+  color: #555;
+}
+
+.note-setup dd {
+  margin: 0;
+}
+
+.note-footnote {
+  margin-top: 16px;
+}
+
 .education li {
   display: grid;
   grid-template-columns: 36px minmax(0, 1fr) auto;
@@ -311,6 +410,33 @@ strong {
 }
 
 @media (max-width: 600px) {
+  .note-overview,
+  .note-setup {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .note-intro {
+    grid-row: 1;
+  }
+
+  .note-media {
+    max-width: 400px;
+  }
+
+  .note-details-content {
+    font-size: 16px;
+  }
+
+  .note-setup dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .note-setup dd + dt {
+    margin-top: 10px;
+  }
+
   .publication {
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
@@ -354,13 +480,4 @@ strong {
   .profile-photo {
     justify-self: center;
   }
-}
-
-/* 2026-10-22: hardware line + optional loop clip */
-.hardware-loop {
-  display: block;
-  width: 100%;
-  margin-top: 16px;
-  border-radius: 8px;
-  background: #191b20;
 }
