@@ -36,7 +36,11 @@
       "physevolve-preview-poster.jpg"
     ],
     "processing": "Copied byte-for-byte; no re-encoding.",
-    "source": "Delivered PhysEvolve project-page assets (site/assets), copied into this homepage."
+    "source": "Blender Cycles re-render of the three paper reference scenes, round 3 (same hues as the paper, softer display palette; physics unchanged), from physevolve/.local/preview-studio/delivery. 960x540, 10.5 s loop; poster is Throwing frame 12.",
+    "sha256": {
+      "physevolve-preview.mp4": "05cfe95ac12ede51ff5fd5aa2667c6be3c736699fc9f9db4013df855d4592f56",
+      "physevolve-preview-poster.jpg": "b5297a1002d0577c0dee923b2aa2be8a27b93e9c456cab805c69df18d590b8d5"
+    }
   },
   "portrait": {
     "source": "assets/jinyuan-hu-retouched.png (local only, ignored by Git)",
